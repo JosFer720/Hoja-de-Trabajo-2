@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class Principal {
+public class Principal<T>{
     BufferedReader br=null;
     FileReader reader=null;
     String line=null;

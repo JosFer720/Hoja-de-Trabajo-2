@@ -1,10 +1,10 @@
 public interface ICalculadora{
 
-int sumar(int op1, int op2);
+double sumar(int op1, int op2);
 
-int restar(int op1, int op2);
+double restar(int op1, int op2);
 
-int multiplicar(int op1, int op2);
+double multiplicar(int op1, int op2);
 
 double dividir(int op1, int op2);
 }
