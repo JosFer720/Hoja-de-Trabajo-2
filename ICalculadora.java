@@ -1,15 +1,8 @@
-public interface ICalculadora<T> {
+public interface ICalculadora{
 
-int sumar();
+int sumar(int op1, int op2);
 
-int restar();
+int restar(int op1, int op2);
 
-int multiplicar();
-
-double dividir();
-
-void push(T value);
-
-void pop(T value);
-
+int multiplicar(int op1, int op2);
 }
