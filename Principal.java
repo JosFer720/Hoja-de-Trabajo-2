@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Principal<T>{
+    // Stack<T> pila = new Stack<>();
+    // Calculadora calc= new Calculadora();
     BufferedReader br=null;
     FileReader reader=null;
     String line=null;
