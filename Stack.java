@@ -33,4 +33,12 @@ public class Stack<T> {
         }
         return null;
     }
+
+    /**
+     * Verifica si la pila está vacía.
+     * @return true si la pila está vacía, false de lo contrario.
+     */
+    public boolean isEmpty() {
+        return firstNode == null;
+    }
 }
