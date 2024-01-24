@@ -1,29 +1,42 @@
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class Principal<T>{
-    // Stack<T> pila = new Stack<>();
-    // Calculadora calc= new Calculadora();
-    BufferedReader br=null;
-    FileReader reader=null;
-    String line=null;
-    public void cargarArchivo(String archivo){
+public class Principal{
+    public static void main(String[] args){
+        String archivo="ejemplo.txt";
         try{
-            File doc = new File(archivo);
-            reader = new FileReader(doc);
-            br= new BufferedReader(reader);
-            ArrayList<String> datos= new ArrayList<>();
-            while ((line=br.readLine())!= null){
-                datos.add(line.toString());
+            ArrayList<ArrayList<String>> elementos = abrirArchivo(archivo);
+            for (int i = 0; i < elementos.size(); i++) {
+                System.out.println("Linea " + (i + 1));
+                ArrayList<String> lineaElementos = elementos.get(i);
+                for (String elemento : lineaElementos) {
+                    System.out.print(elemento + " - ");
+                }
+                // System.out.println();
             }
-            for (String num:datos){
-                System.out.println(num);
-            }
+        } catch (IOException e){
+            System.out.println("Error al abrir el archivo"+ e.getMessage());
+        }
     }
-    catch(Exception a){
-        throw new RuntimeException("Error");
+
+    public static ArrayList<ArrayList<String>> abrirArchivo(String archivo) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(archivo));
+        String linea;
+        ArrayList<ArrayList<String>> elementos = new ArrayList<>();
+        while ((linea = reader.readLine()) != null) {
+            ArrayList<String> lineaElementos = new ArrayList<>();
+            String[] partes = linea.split(" ");
+            for (String parte : partes) {
+                if (!parte.isEmpty()) {
+                    lineaElementos.add(parte);
+                }
+            }
+            elementos.add(lineaElementos);
+        }
+        reader.close();
+        return elementos;
     }
 }
-}
+
