@@ -1,21 +1,49 @@
-public class Node<T>{
+/**
+ * Clase que representa un nodo genérico utilizado en una estructura de datos.
+ * @param <T> El tipo de elemento almacenado en el nodo.
+ */
+public class Node<T> {
     T value;
     Node<T> next;
 
-    public T getValue(){
+    /**
+     * Obtiene el valor almacenado en el nodo.
+     * @return El valor almacenado en el nodo.
+     */
+    public T getValue() {
         return value;
     }
-    public Node<T> getNext(){
+
+    /**
+     * Obtiene el siguiente nodo en la secuencia.
+     * @return El siguiente nodo en la secuencia.
+     */
+    public Node<T> getNext() {
         return next;
     }
-    public void setValue(T newValue){
-        value=newValue;
+
+    /**
+     * Establece el valor del nodo.
+     * @param newValue El nuevo valor a establecer en el nodo.
+     */
+    public void setValue(T newValue) {
+        value = newValue;
     }
-    public void setNext(Node<T> n){
-        next=n;
+
+    /**
+     * Establece el siguiente nodo en la secuencia.
+     * @param n El siguiente nodo en la secuencia.
+     */
+    public void setNext(Node<T> n) {
+        next = n;
     }
-    public Node (T val){
-        value=val;
-        next=null;
+
+    /**
+     * Constructor que inicializa un nuevo nodo con un valor específico.
+     * @param val El valor a almacenar en el nodo.
+     */
+    public Node(T val) {
+        value = val;
+        next = null;
     }
 }

@@ -1,22 +1,33 @@
+/**
+ * Clase que representa una pila genérica.
+ * @param <T> El tipo de elementos que se almacenarán en la pila.
+ */
 public class Stack<T> {
     private Node<T> lastNode;
     private Node<T> firstNode;
 
-    public void push(T value){
-        if (lastNode==null){
-            lastNode=new Node<T>(value);
-            firstNode=lastNode;
-        }
-        else{
-            Node<T> current=new Node<T>(value);
+    /**
+     * Agrega un elemento a la pila.
+     * @param value El valor del elemento a agregar.
+     */
+    public void push(T value) {
+        if (lastNode == null) {
+            lastNode = new Node<T>(value);
+            firstNode = lastNode;
+        } else {
+            Node<T> current = new Node<T>(value);
             current.setNext(firstNode);
-            firstNode=current;
+            firstNode = current;
         }
     }
 
-    public T pop(){
-        if (firstNode!=null){
-            T value=firstNode.getValue();
+    /**
+     * Elimina y devuelve el elemento en la cima de la pila.
+     * @return El elemento eliminado, o null si la pila está vacía.
+     */
+    public T pop() {
+        if (firstNode != null) {
+            T value = firstNode.getValue();
             firstNode = firstNode.getNext();
             return value;
         }
