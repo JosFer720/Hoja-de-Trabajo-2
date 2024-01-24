@@ -1,5 +1,5 @@
 /**
- * Clase que implementa la interfaz {@link ICalculadora} proporcionando operaciones aritméticas básicas.
+ * Clase que implementa la doubleerfaz {@link ICalculadora} proporcionando operaciones aritméticas básicas.
  */
 public class Calculadora implements ICalculadora {
 
@@ -10,7 +10,7 @@ public class Calculadora implements ICalculadora {
      * @return El resultado de la suma.
      */
     @Override
-    public double sumar(int op1, int op2) {
+    public double sumar(double op1, double op2) {
         return op1 + op2;
     }
 
@@ -21,7 +21,7 @@ public class Calculadora implements ICalculadora {
      * @return El resultado de la resta.
      */
     @Override
-    public double restar(int op1, int op2) {
+    public double restar(double op1, double op2) {
         return op1 - op2;
     }
 
@@ -32,7 +32,7 @@ public class Calculadora implements ICalculadora {
      * @return El resultado de la multiplicación.
      */
     @Override
-    public double multiplicar(int op1, int op2) {
+    public double multiplicar(double op1, double op2) {
         return op1 * op2;
     }
 
@@ -41,10 +41,10 @@ public class Calculadora implements ICalculadora {
      * @param op1 El numerador.
      * @param op2 El denominador.
      * @return El resultado de la división.
-     * @throws ArithmeticException Si se intenta dividir por cero.
+     * @throws ArithmeticException Si se doubleenta dividir por cero.
      */
     @Override
-    public double dividir(int op1, int op2) throws ArithmeticException {
+    public double dividir(double op1, double op2) throws ArithmeticException {
         if (op2 != 0) {
             return (double) op1 / op2;
         } else {
