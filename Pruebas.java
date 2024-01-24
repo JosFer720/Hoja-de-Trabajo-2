@@ -36,13 +36,10 @@ public class Pruebas {
         stack.pop();
         assertTrue(stack.isEmpty());
     }
-    
     @Test
-    public void testDividirPorCero() {
+    public void testDivision() {
         ICalculadora calculadora = new Calculadora();
-        // Este caso debería fallar porque estamos dividiendo por cero
-        assertThrows(ArithmeticException.class, () -> {
-            double resultado = calculadora.dividir(8, 0);
-        });
+        double resultado = calculadora.dividir(2, 0);
+        assertEquals(5, resultado, 0.0001);
     }
 }
