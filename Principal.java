@@ -84,11 +84,17 @@ public class Principal {
      */
     private static void mostrarResultadoActual(Stack<Double> pila) {
         if (!pila.isEmpty()) {
-            System.out.println("Resultado actual en la pila: " + pila.peek());
+            System.out.println("Resultados actuales en la pila:");
+    
+            // Mientras la pila no esté vacía, imprimir resultados
+            while (!pila.isEmpty()) {
+                System.out.println(pila.pop());
+            }
+    
         } else {
             System.out.println("La pila está vacía. Realice operaciones primero.");
         }
-    }
+    }    
 
     /**
      * Verifica si un elemento es un número.
